@@ -1,0 +1,11 @@
+/home/aik/Temps/bevy_ecs_typewriter/target/debug/deps/bevy_ecs_macros-ae0b2e8e8602813b.d: /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/lib.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/component.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/event.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/message.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_data.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_filter.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/world_query.rs
+
+/home/aik/Temps/bevy_ecs_typewriter/target/debug/deps/libbevy_ecs_macros-ae0b2e8e8602813b.so: /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/lib.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/component.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/event.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/message.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_data.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_filter.rs /home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/world_query.rs
+
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/lib.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/component.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/event.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/message.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_data.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/query_filter.rs:
+/home/aik/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_ecs_macros-0.17.3/src/world_query.rs:
