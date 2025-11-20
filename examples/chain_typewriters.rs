@@ -36,7 +36,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResM
 
     let mut typewriter = Typewriter::new(&state.dialogues[0], 0.05);
     typewriter.play();
-    
+
     commands.spawn((
         Text::new(""),
         TextFont {
@@ -56,7 +56,10 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResM
         ChainedDialogue,
     ));
 
-    info!("Chain Typewriters Example Started - {} dialogues", state.dialogues.len());
+    info!(
+        "Chain Typewriters Example Started - {} dialogues",
+        state.dialogues.len()
+    );
     info!("Controls: SPACE - Play/Pause | R - Restart | S - Stop");
 }
 
@@ -107,8 +110,12 @@ fn chain_system(
             state.current_index += 1;
             typewriter.source_text = state.dialogues[state.current_index].clone();
             typewriter.restart();
-            
-            info!("Playing dialogue {} / {}", state.current_index + 1, state.dialogues.len());
+
+            info!(
+                "Playing dialogue {} / {}",
+                state.current_index + 1,
+                state.dialogues.len()
+            );
         }
     }
 }

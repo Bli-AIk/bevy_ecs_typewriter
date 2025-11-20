@@ -18,14 +18,22 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
 
     let texts = vec![
         ("Fast Typewriter", "This is a fast typewriter effect!", 0.03),
-        ("Medium Typewriter", "This is a medium-speed typewriter effect.", 0.08),
-        ("Slow Typewriter", "This is a very slow typewriter effect.", 0.2),
+        (
+            "Medium Typewriter",
+            "This is a medium-speed typewriter effect.",
+            0.08,
+        ),
+        (
+            "Slow Typewriter",
+            "This is a very slow typewriter effect.",
+            0.2,
+        ),
     ];
 
     for (id, (name, text, speed)) in texts.into_iter().enumerate() {
         let mut typewriter = Typewriter::new(text, speed);
         typewriter.play();
-        
+
         commands.spawn((
             Text::new(""),
             TextFont {
@@ -51,10 +59,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     info!("Controls: SPACE - Play/Pause All | R - Restart All | S - Stop All");
 }
 
-fn control_system(
-    keyboard: Res<ButtonInput<KeyCode>>,
-    mut query: Query<&mut Typewriter>,
-) {
+fn control_system(keyboard: Res<ButtonInput<KeyCode>>, mut query: Query<&mut Typewriter>) {
     if keyboard.just_pressed(KeyCode::Space) {
         for mut typewriter in &mut query {
             match typewriter.state {

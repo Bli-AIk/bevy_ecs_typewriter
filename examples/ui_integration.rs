@@ -83,7 +83,9 @@ fn control_system(
     }
 }
 
-fn sync_text_system(mut query: Query<(&Typewriter, &mut Text), (Changed<Typewriter>, With<DialogueText>)>) {
+fn sync_text_system(
+    mut query: Query<(&Typewriter, &mut Text), (Changed<Typewriter>, With<DialogueText>)>,
+) {
     for (typewriter, mut text) in &mut query {
         **text = typewriter.current_text.clone();
     }

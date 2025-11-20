@@ -18,18 +18,33 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
 
     let multilingual_texts = vec![
         ("中文", "你好世界！这是一个支持多语言的打字机效果。"),
-        ("English", "Hello World! This is a multilingual typewriter effect. "),
-        ("日本語", "こんにちは世界！これは多言語タイプライター効果です。"),
-        ("한국어", "안녕하세요 세상! 이것은 다국어 타자기 효과입니다. "),
-        ("Русский", "Привет мир! Это многоязычный эффект печатной машинки. "),
-        ("العربية", "مرحبا بالعالم! هذا تأثير آلة كاتبة متعدد اللغات."),
+        (
+            "English",
+            "Hello World! This is a multilingual typewriter effect. ",
+        ),
+        (
+            "日本語",
+            "こんにちは世界！これは多言語タイプライター効果です。",
+        ),
+        (
+            "한국어",
+            "안녕하세요 세상! 이것은 다국어 타자기 효과입니다. ",
+        ),
+        (
+            "Русский",
+            "Привет мир! Это многоязычный эффект печатной машинки. ",
+        ),
+        (
+            "العربية",
+            "مرحبا بالعالم! هذا تأثير آلة كاتبة متعدد اللغات.",
+        ),
         ("Mixed", "Hello 世界！Привет мир  こんにちは 안녕 مرحبا"),
     ];
 
     for (id, (lang, text)) in multilingual_texts.into_iter().enumerate() {
         let mut typewriter = Typewriter::new(text, 0.08);
         typewriter.play();
-        
+
         commands.spawn((
             Text::new(""),
             TextFont {

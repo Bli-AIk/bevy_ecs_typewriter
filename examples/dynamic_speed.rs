@@ -6,7 +6,14 @@ fn main() {
         .add_plugins(DefaultPlugins)
         .add_plugins(TypewriterPlugin)
         .add_systems(Startup, setup)
-        .add_systems(Update, (speed_control_system, sync_text_system, status_display_system))
+        .add_systems(
+            Update,
+            (
+                speed_control_system,
+                sync_text_system,
+                status_display_system,
+            ),
+        )
         .run();
 }
 
@@ -24,7 +31,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         0.1,
     );
     typewriter.play();
-    
+
     commands.spawn((
         Text::new(""),
         TextFont {
@@ -84,7 +91,9 @@ fn speed_control_system(
         }
 
         if new_duration != current_duration {
-            typewriter.timer.set_duration(std::time::Duration::from_secs_f32(new_duration));
+            typewriter
+                .timer
+                .set_duration(std::time::Duration::from_secs_f32(new_duration));
         }
 
         if keyboard.just_pressed(KeyCode::Space) {
@@ -132,7 +141,9 @@ fn status_display_system(
     typewriter_query: Query<&Typewriter, With<DynamicSpeed>>,
     mut status_query: Query<&mut Text, With<StatusDisplay>>,
 ) {
-    if let (Ok(typewriter), Ok(mut status_text)) = (typewriter_query.single(), status_query.single_mut()) {
+    if let (Ok(typewriter), Ok(mut status_text)) =
+        (typewriter_query.single(), status_query.single_mut())
+    {
         let speed = typewriter.timer.duration().as_secs_f32();
         **status_text = format!(
             "Speed: {:.3}s/char | Progress: {:.0}% | State: {:?}",
