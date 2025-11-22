@@ -17,7 +17,7 @@ pub struct Typewriter {
     pub current_text: String,
     pub timer: Timer,
     pub state: TypewriterState,
-    current_char_index: usize,
+    pub current_char_index: usize,
 }
 
 impl Typewriter {
