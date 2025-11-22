@@ -5,7 +5,7 @@ edition = "2024"
 authors = ["Bli-AIk <haikun2333@gmail.com>"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/Bli-AIk/bevy_ecs_typewriter"
-description = "Mesh text animation system for Bevy engine"
+description = "ECS typewriter system for Bevy engine"
 
 [dependencies]
 bevy = "0.17.2"
