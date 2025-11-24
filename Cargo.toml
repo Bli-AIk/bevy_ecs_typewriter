@@ -1,12 +1,15 @@
 [package]
 name = "bevy_ecs_typewriter"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2024"
 authors = ["Bli-AIk <haikun2333@gmail.com>"]
-license = "LGPL-3.0-or-later"
-repository = "https://github.com/Bli-AIk/souprune"
-description = "Mesh text animation system for Bevy engine"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Bli-AIk/bevy_ecs_typewriter"
+description = "ECS typewriter system for Bevy engine"
+exclude = [
+    "target/*",
+    ".github/*"
+]
 
 [dependencies]
 bevy = "0.17.2"
-serde = { version = "1.0", features = ["derive"] }
