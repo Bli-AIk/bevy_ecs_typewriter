@@ -94,10 +94,9 @@ cargo run --example dynamic_speed
 
 本项目使用以下 crate：
 
-| Crate                                             | 版本    | 描述   |
-| ------------------------------------------------- | ----- | ---- |
+| Crate                                 | 版本     | 描述   |
+|---------------------------------------|--------|------|
 | [bevy](https://crates.io/crates/bevy) | 0.17.2 | 游戏引擎 |
-| [serde](https://crates.io/crates/serde) | 1.0 | 序列化框架 |
 
 ## 贡献指南
 

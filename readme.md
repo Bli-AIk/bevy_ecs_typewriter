@@ -95,10 +95,9 @@ cargo run --example dynamic_speed
 
 This project uses the following crates:
 
-| Crate                                             | Version | Description                 |
-| ------------------------------------------------- | ------- | --------------------------- |
-| [bevy](https://crates.io/crates/bevy) | 0.17.2   | Game engine |
-| [serde](https://crates.io/crates/serde) | 1.0   | Serialization framework |
+| Crate                                 | Version | Description |
+|---------------------------------------|---------|-------------|
+| [bevy](https://crates.io/crates/bevy) | 0.17.2  | Game engine |
 
 ## Contributing
 
