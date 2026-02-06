@@ -101,6 +101,7 @@ fn control_system(
     }
 }
 
+#[allow(clippy::collapsible_if)]
 fn chain_system(
     mut query: Query<&mut Typewriter, With<ChainedDialogue>>,
     mut state: ResMut<DialogueState>,
