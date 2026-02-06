@@ -58,7 +58,7 @@ jobs:
         run: cargo build --verbose
 
       - name: Run tests
-        run: cargo nextest run --verbose
+        run: cargo nextest run --verbose --no-tests=pass
 
   deny:
     name: Cargo Deny
