@@ -83,6 +83,7 @@ fn control_system(
     }
 }
 
+#[allow(clippy::type_complexity)]
 fn sync_text_system(
     mut query: Query<(&Typewriter, &mut Text), (Changed<Typewriter>, With<DialogueText>)>,
 ) {

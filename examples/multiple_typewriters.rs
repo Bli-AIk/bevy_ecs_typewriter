@@ -11,6 +11,7 @@ fn main() {
 }
 
 #[derive(Component)]
+#[allow(dead_code)]
 struct TypewriterId(usize);
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
