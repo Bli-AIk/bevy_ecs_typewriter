@@ -25,14 +25,21 @@ With `bevy_ecs_typewriter`, you can create typewriter effects for dialogues, sub
 * ⏱️ **Dynamic Speed Control** - Adjust typing speed in real-time
 * 📊 **Progress Tracking** - Get current progress and state information
 
+## Bevy Version Support
+
+| `bevy` | `bevy_ecs_typewriter` |
+|--------|-----------------------|
+| 0.18   | 0.2.0                 |
+| 0.17   | < 0.2.0               |
+
 ## How to Use
 
 1. **Add to Cargo.toml**:
 
    ```toml
    [dependencies]
-   bevy = "0.17.2"
-   bevy_ecs_typewriter = "0.0.0"
+   bevy = "0.18"
+   bevy_ecs_typewriter = "0.2.0"
    ```
 
 2. **Add the plugin to your app**:
@@ -97,7 +104,7 @@ This project uses the following crates:
 
 | Crate                                 | Version | Description |
 |---------------------------------------|---------|-------------|
-| [bevy](https://crates.io/crates/bevy) | 0.17.2  | Game engine |
+| [bevy](https://crates.io/crates/bevy) | 0.18    | Game engine |
 
 ## Contributing
 
