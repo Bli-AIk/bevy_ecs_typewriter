@@ -12,4 +12,4 @@ exclude = [
 ]
 
 [dependencies]
-bevy = "0.17.2"
+bevy = "0.18"
