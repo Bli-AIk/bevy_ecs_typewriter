@@ -101,7 +101,7 @@ fn control_system(
     }
 }
 
-#[allow(clippy::collapsible_if)]
+#[expect(clippy::collapsible_if)] // reason: separate conditions are clearer in context
 fn chain_system(
     mut query: Query<&mut Typewriter, With<ChainedDialogue>>,
     mut state: ResMut<DialogueState>,
@@ -121,7 +121,7 @@ fn chain_system(
     }
 }
 
-#[allow(clippy::type_complexity)]
+#[expect(clippy::type_complexity)] // reason: Bevy query with multiple filter components
 fn sync_text_system(
     mut query: Query<(&Typewriter, &mut Text), (Changed<Typewriter>, With<ChainedDialogue>)>,
     state: Res<DialogueState>,
