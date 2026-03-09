@@ -129,7 +129,6 @@ fn speed_control_system(
     }
 }
 
-#[expect(clippy::type_complexity)] // reason: Bevy query with multiple filter components
 fn sync_text_system(
     mut query: Query<(&Typewriter, &mut Text), (Changed<Typewriter>, With<DynamicSpeed>)>,
 ) {
