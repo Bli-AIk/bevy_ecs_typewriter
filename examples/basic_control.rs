@@ -14,7 +14,7 @@ fn main() {
 struct PlayerControlled;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let mut typewriter = Typewriter::new(
         "Welcome to the Typewriter Effect!\n\nControls:\n  SPACE - Play/Pause\n  R - Restart\n  S - Stop",
@@ -23,6 +23,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     typewriter.play();
 
     commands.spawn((
+        Name::new("TypewriterText"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

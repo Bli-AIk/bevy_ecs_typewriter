@@ -21,7 +21,7 @@ struct DialogueState {
 struct ChainedDialogue;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResMut<DialogueState>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     state.dialogues = vec![
         "Game started...".to_string(),
@@ -38,6 +38,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResM
     typewriter.play();
 
     commands.spawn((
+        Name::new("ChainedDialogue"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

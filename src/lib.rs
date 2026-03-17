@@ -1,5 +1,12 @@
 use bevy::prelude::*;
 
+pub mod prelude {
+    pub use crate::{Typewriter, TypewriterPlugin, TypewriterState, TypewriterSystemSet};
+}
+
+#[derive(SystemSet, Debug, Clone, PartialEq, Eq, Hash)]
+pub struct TypewriterSystemSet;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default, Reflect)]
 #[reflect(Debug, PartialEq)]
 pub enum TypewriterState {
@@ -119,6 +126,90 @@ impl Plugin for TypewriterPlugin {
     fn build(&self, app: &mut App) {
         app.register_type::<Typewriter>()
             .register_type::<TypewriterState>()
-            .add_systems(Update, typewriter_system);
+            .add_systems(
+                Update,
+                typewriter_system
+                    .in_set(TypewriterSystemSet)
+                    .run_if(any_with_component::<Typewriter>),
+            );
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn new_typewriter_is_idle() {
+        let tw = Typewriter::new("hello", 0.05);
+        assert_eq!(tw.state, TypewriterState::Idle);
+        assert!(tw.current_text.is_empty());
+        assert_eq!(tw.current_char_index, 0);
+    }
+
+    #[test]
+    fn play_sets_playing_state() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.play();
+        assert_eq!(tw.state, TypewriterState::Playing);
+    }
+
+    #[test]
+    fn pause_and_resume() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.play();
+        tw.pause();
+        assert_eq!(tw.state, TypewriterState::Paused);
+        tw.resume();
+        assert_eq!(tw.state, TypewriterState::Playing);
+    }
+
+    #[test]
+    fn stop_resets_state() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.play();
+        tw.current_char_index = 3;
+        tw.current_text = "hel".to_string();
+        tw.stop();
+        assert_eq!(tw.state, TypewriterState::Idle);
+        assert_eq!(tw.current_char_index, 0);
+        assert!(tw.current_text.is_empty());
+    }
+
+    #[test]
+    fn restart_resets_and_plays() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.play();
+        tw.current_char_index = 3;
+        tw.restart();
+        assert_eq!(tw.state, TypewriterState::Playing);
+        assert_eq!(tw.current_char_index, 0);
+    }
+
+    #[test]
+    fn progress_empty_text() {
+        let tw = Typewriter::new("", 0.05);
+        assert_eq!(tw.progress(), 1.0);
+    }
+
+    #[test]
+    fn progress_partial() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.current_char_index = 2;
+        assert!((tw.progress() - 0.4).abs() < f32::EPSILON);
+    }
+
+    #[test]
+    fn pause_only_from_playing() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.pause();
+        assert_eq!(tw.state, TypewriterState::Idle);
+    }
+
+    #[test]
+    fn resume_only_from_paused() {
+        let mut tw = Typewriter::new("hello", 0.05);
+        tw.resume();
+        assert_eq!(tw.state, TypewriterState::Idle);
     }
 }

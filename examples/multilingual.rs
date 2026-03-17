@@ -14,7 +14,7 @@ fn main() {
 struct Language(String);
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let multilingual_texts = vec![
         ("中文", "你好世界！这是一个支持多语言的打字机效果。"),
@@ -46,6 +46,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         typewriter.play();
 
         commands.spawn((
+            Name::new(format!("Typewriter-{lang}")),
             Text::new(""),
             TextFont {
                 font: asset_server.load("Unifont.otf"),

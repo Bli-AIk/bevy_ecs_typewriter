@@ -14,7 +14,7 @@ fn main() {
 struct DialogueText;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let mut typewriter = Typewriter::new(
         "This is an example of UI integration.\n\nThe Typewriter component handles pure text management,\nwhile the UI component simply syncs and displays the text.\n\nThis decoupled design makes the code more flexible!",
@@ -23,6 +23,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     typewriter.play();
 
     commands.spawn((
+        Name::new("DialogueText"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

@@ -11,11 +11,10 @@ fn main() {
 }
 
 #[derive(Component)]
-#[allow(dead_code)]
-struct TypewriterId(usize);
+struct TypewriterId(#[allow(dead_code)] usize);
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let texts = vec![
         ("Fast Typewriter", "This is a fast typewriter effect!", 0.03),

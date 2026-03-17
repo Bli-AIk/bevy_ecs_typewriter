@@ -24,7 +24,7 @@ struct DynamicSpeed;
 struct StatusDisplay;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let mut typewriter = Typewriter::new(
         "This is a typewriter with dynamic speed control.\n\nPress UP arrow to speed up.\nPress DOWN arrow to slow down.\n\nCurrent speed is displayed at the bottom.",
@@ -33,6 +33,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     typewriter.play();
 
     commands.spawn((
+        Name::new("TypewriterText"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),
@@ -52,6 +53,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     ));
 
     commands.spawn((
+        Name::new("StatusDisplay"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),
