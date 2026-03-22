@@ -1,3 +1,10 @@
+//! This example exercises the typewriter effect with multilingual content.
+//! It exists to show that the runtime can step through different scripts and keep
+//! finished-state signaling intact across mixed-language text payloads.
+//!
+//! 这个示例使用多语言文本来验证打字机效果。它的作用是展示运行时可以逐步揭示不同书写系统的内容，
+//! 同时在混合语言文本下依然保持正确的完成态通知语义。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 

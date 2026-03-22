@@ -1,3 +1,10 @@
+//! This example shows several typewriter components running side by side.
+//! It is meant to demonstrate that each entity keeps independent reveal timing
+//! and controls, even when all of them share the same plugin and frame updates.
+//!
+//! 这个示例展示多个打字机组件并行运行的场景。它说明即使所有实体共享同一个插件和帧更新，
+//! 每个实体依然可以保持各自独立的揭示节奏和控制状态。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 

@@ -1,3 +1,10 @@
+//! This example demonstrates the intended separation between the typewriter state
+//! machine and presentation UI. The `Typewriter` component owns reveal progress,
+//! while the Bevy UI text node simply mirrors the currently visible string.
+//!
+//! 这个示例演示打字机状态机与展示层 UI 之间的预期分工。`Typewriter` 组件负责维护揭示进度，
+//! 而 Bevy 的 UI 文本节点只负责同步并显示当前可见字符串。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 

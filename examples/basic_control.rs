@@ -1,3 +1,10 @@
+//! This example demonstrates the smallest interactive setup for `bevy_ecs_typewriter`.
+//! It shows how to attach a `Typewriter` component, mirror its visible text into UI,
+//! and control playback with a few keyboard shortcuts.
+//!
+//! 这个示例展示了 `bevy_ecs_typewriter` 最小可交互接入方式。它演示如何挂载
+//! `Typewriter` 组件、把可见文本同步到 UI，并通过几个键盘快捷键控制播放流程。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 
