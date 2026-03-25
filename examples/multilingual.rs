@@ -1,3 +1,10 @@
+//! This example exercises the typewriter effect with multilingual content.
+//! It exists to show that the runtime can step through different scripts and keep
+//! finished-state signaling intact across mixed-language text payloads.
+//!
+//! 这个示例使用多语言文本来验证打字机效果。它的作用是展示运行时可以逐步揭示不同书写系统的内容，
+//! 同时在混合语言文本下依然保持正确的完成态通知语义。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 
@@ -14,7 +21,7 @@ fn main() {
 struct Language(String);
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let multilingual_texts = vec![
         ("中文", "你好世界！这是一个支持多语言的打字机效果。"),
@@ -46,6 +53,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         typewriter.play();
 
         commands.spawn((
+            Name::new(format!("Typewriter-{lang}")),
             Text::new(""),
             TextFont {
                 font: asset_server.load("Unifont.otf"),

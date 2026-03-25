@@ -1,3 +1,10 @@
+//! This example focuses on runtime speed changes for the typewriter effect.
+//! It demonstrates how playback rate can be adjusted while text is already
+//! revealing, and how a small status panel can reflect the current speed state.
+//!
+//! 这个示例聚焦于打字机效果的运行时速度调整。它演示文本已经开始揭示之后如何动态修改
+//! 播放速率，以及如何用一个简单的状态面板把当前速度同步显示出来。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 
@@ -24,7 +31,7 @@ struct DynamicSpeed;
 struct StatusDisplay;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let mut typewriter = Typewriter::new(
         "This is a typewriter with dynamic speed control.\n\nPress UP arrow to speed up.\nPress DOWN arrow to slow down.\n\nCurrent speed is displayed at the bottom.",
@@ -33,6 +40,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     typewriter.play();
 
     commands.spawn((
+        Name::new("TypewriterText"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),
@@ -52,6 +60,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     ));
 
     commands.spawn((
+        Name::new("StatusDisplay"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

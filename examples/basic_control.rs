@@ -1,3 +1,10 @@
+//! This example demonstrates the smallest interactive setup for `bevy_ecs_typewriter`.
+//! It shows how to attach a `Typewriter` component, mirror its visible text into UI,
+//! and control playback with a few keyboard shortcuts.
+//!
+//! 这个示例展示了 `bevy_ecs_typewriter` 最小可交互接入方式。它演示如何挂载
+//! `Typewriter` 组件、把可见文本同步到 UI，并通过几个键盘快捷键控制播放流程。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 
@@ -14,7 +21,7 @@ fn main() {
 struct PlayerControlled;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     let mut typewriter = Typewriter::new(
         "Welcome to the Typewriter Effect!\n\nControls:\n  SPACE - Play/Pause\n  R - Restart\n  S - Stop",
@@ -23,6 +30,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     typewriter.play();
 
     commands.spawn((
+        Name::new("TypewriterText"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

@@ -1,3 +1,10 @@
+//! This example demonstrates how to chain multiple dialogue lines with successive
+//! `Typewriter` instances. It provides a small dialogue-state resource so one line
+//! can start automatically after the previous line reaches its finished state.
+//!
+//! 这个示例演示如何用连续的 `Typewriter` 实例串联多段对白。它提供了一个小型对话状态资源，
+//! 让上一段文本结束后，下一段能够自动开始播放。
+
 use bevy::prelude::*;
 use bevy_ecs_typewriter::{Typewriter, TypewriterPlugin};
 
@@ -21,7 +28,7 @@ struct DialogueState {
 struct ChainedDialogue;
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResMut<DialogueState>) {
-    commands.spawn(Camera2d);
+    commands.spawn((Name::new("Camera"), Camera2d));
 
     state.dialogues = vec![
         "Game started...".to_string(),
@@ -38,6 +45,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut state: ResM
     typewriter.play();
 
     commands.spawn((
+        Name::new("ChainedDialogue"),
         Text::new(""),
         TextFont {
             font: asset_server.load("Unifont.otf"),

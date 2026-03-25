@@ -7,6 +7,8 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/Bli-AIk/bevy_ecs_typewriter"
 readme = "readme.md"
 description = "ECS typewriter system for Bevy engine"
+keywords = ["bevy", "typewriter", "text-effect", "ui", "dialogue"]
+categories = ["game-development"]
 exclude = [
     "target/*",
     ".github/*"
@@ -16,4 +18,19 @@ exclude = [
 bevy = { version = "0.18", default-features = false, features = [
     "std",
     "reflect_auto_register",
+] }
+
+[dev-dependencies]
+bevy = { version = "0.18", default-features = false, features = [
+    "std",
+    "reflect_auto_register",
+    "bevy_asset",
+    "bevy_log",
+    "bevy_text",
+    "bevy_ui",
+    "bevy_render",
+    "bevy_window",
+    "bevy_winit",
+    "default_font",
+    "x11",
 ] }
