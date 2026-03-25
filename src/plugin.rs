@@ -6,10 +6,10 @@
 //!
 //! ## 模块概述
 //!
-//! This file defines the Bevy plugin surface for the typewriter crate. It registers the reflected
+//! Defines the Bevy plugin surface for the typewriter crate. It registers the reflected
 //! component types and installs the update system set that advances visible text over time.
 //!
-//! 这个文件定义了 typewriter crate 的 Bevy 插件入口。它会注册可反射的组件类型，并安装负责
+//! 定义了 typewriter crate 的 Bevy 插件入口。它会注册可反射的组件类型，并安装负责
 //! 推进可见文本的更新系统集。
 
 use bevy::prelude::*;

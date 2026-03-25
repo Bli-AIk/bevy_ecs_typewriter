@@ -6,11 +6,11 @@
 //!
 //! ## 模块概述
 //!
-//! This file defines the stateful ECS data used by the typewriter effect. It contains the
+//! Defines the stateful ECS data used by the typewriter effect. It contains the
 //! `Typewriter` component itself together with its playback state enum and the small helper methods
 //! that external code uses to start, pause, stop, or inspect the effect.
 //!
-//! 这个文件定义了打字机效果需要的有状态 ECS 数据。它包含 `Typewriter` 组件本体、对应的播放
+//! 定义了打字机效果需要的有状态 ECS 数据。它包含 `Typewriter` 组件本体、对应的播放
 //! 状态枚举，以及外部代码用来启动、暂停、停止和查询该效果的一组小型辅助方法。
 
 use bevy::prelude::*;

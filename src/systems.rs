@@ -6,11 +6,11 @@
 //!
 //! ## 模块概述
 //!
-//! This file contains the runtime system that advances all active typewriter components. It is the
+//! Contains the runtime system that advances all active typewriter components. It is the
 //! part of the crate that turns elapsed time into newly revealed characters while respecting pause,
 //! finish, and restart semantics defined by the component state.
 //!
-//! 这个文件包含推进所有活跃 typewriter 组件的运行时系统。它负责把流逝时间转换成新揭示出的
+//! 包含推进所有活跃 typewriter 组件的运行时系统。它负责把流逝时间转换成新揭示出的
 //! 字符，同时遵守组件状态里定义的暂停、结束和重启语义。
 
 use bevy::prelude::*;
