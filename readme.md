@@ -11,10 +11,10 @@
 
 ## Introduction
 
-`bevy_ecs_typewriter` is a lightweight typewriter effect plugin for the Bevy game engine.  
-It provides pure text management without any dependency on UI components, making it flexible for various use cases.
-
-With `bevy_ecs_typewriter`, you can create typewriter effects for dialogues, subtitles, or any text animations with simple component-based control.
+`bevy_ecs_typewriter` is a minimalist plug-in specially built for [Bevy](https://bevyengine.org/). It only focuses on
+doing one thing well: making a piece of text increment word by word, "typing display".
+By being completely decoupled from the UI, it allows you to drive dialogue, terminals or subtitles in a simple
+component-based way and easily adapt to any rendering scheme.
 
 ## Features
 
